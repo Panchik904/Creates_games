@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игры на заказ</title>
+</head>
+<body style="font-family: Arial, sans-serif; background: #1a1a2e; color: white; margin: 0; padding: 0; text-align: center;">
+
+    <!-- Шапка -->
+    <div style="padding: 50px 20px 30px;">
+        <h1 style="color: #e94560; font-size: 42px;">Игры на заказ</h1>
+        <p style="color: #aaa; font-size: 18px;">Создаю игры для телефона | 14 лет</p>
+    </div>
+
+    <!-- Меню -->
+    <div style="padding: 20px;">
+        <button onclick="showSection('about')" style="padding: 12px 30px; border: 2px solid #e94560; background: #e94560; color: white; border-radius: 30px; font-size: 16px; margin: 5px;" id="btn-about">Об играх</button>
+        <button onclick="showSection('prices')" style="padding: 12px 30px; border: 2px solid #e94560; background: transparent; color: #FFFFFF; border-radius: 30px; font-size: 16px; margin: 5px;" id="btn-prices">Цены</button>
+        <button onclick="showSection('contact')" style="padding: 12px 30px; border: 2px solid #e94560; background: transparent; color: #FFFFFF; border-radius: 30px; font-size: 16px; margin: 5px;" id="btn-contact">Связаться</button>
+    </div>
+
+    <!-- Контент -->
+    <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
+
+        <!-- Об играх -->
+        <div id="about" style="background: rgba(255,255,255,0.05); border-radius: 20px; padding: 30px; margin-bottom: 20px;">
+            <h2 style="color: #e94560;">Об играх</h2>
+            <p style="color: #ccc; line-height: 1.8;">Могу создать любую игру в 2D на Python для телефона.</p>
+            <p style="color: #ccc; line-height: 1.8;">Какую именно — обсудим в Max.</p>
+        </div>
+
+        <!-- Цены -->
+        <div id="prices" style="background: rgba(255,255,255,0.05); border-radius: 20px; padding: 30px; margin-bottom: 20px; display: none;">
+            <h2 style="color: #e94560;">Цены</h2>
+            <p style="color: #ccc; line-height: 1.8;">Цена зависит от сложности игры:</p>
+
+            <div style="background: rgba(255,255,255,0.03); border-radius: 15px; padding: 20px; margin: 15px 0; border-left: 3px solid #4dc9f6; text-align: left;">
+                <h3 style="color: #4dc9f6;">Простые игры</h3>
+                <p style="color: #ccc;">От 40 до 100 руб.</p>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.03); border-radius: 15px; padding: 20px; margin: 15px 0; border-left: 3px solid #e94560; text-align: left;">
+                <h3 style="color: #e94560;">Сложные игры</h3>
+                <p style="color: #ccc;">От 100 до 200 руб.</p>
+            </div>
+
+            <p style="color: #ccc; line-height: 1.8;">Точная цена обсуждается в Max.</p>
+            <p style="color: #e94560; font-weight: bold;">Оплата только переводом!</p>
+        </div>
+
+        <!-- Контакты -->
+        <div id="contact" style="background: rgba(255,255,255,0.05); border-radius: 20px; padding: 30px; margin-bottom: 20px; display: none;">
+            <h2 style="color: #e94560;">Связаться со мной</h2>
+
+            <div style="background: rgba(255,255,255,0.03); border-radius: 15px; padding: 20px; margin: 15px 0; border-left: 3px solid #e94560; text-align: left;">
+                <h3 style="color: #e94560;">Max</h3>
+                <p style="color: #ccc;">Пиши в Max, обсудим какую игру создать и стоимость:</p>
+                <a href="https://max.ru/u/f9LHodD0cOLywcgihYW0wEqCpBE1eEIZmSMeK_uTJKyrd1vWX4Wrz2cspxc" style="color: #4dc9f6; font-size: 18px;">Написать в Max</a>
+                <p style="color: #aaa; margin-top: 10px;">Отвечаю в течение 1 дня</p>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.03); border-radius: 15px; padding: 20px; margin: 15px 0; border-left: 3px solid #e94560; text-align: left;">
+                <h3 style="color: #e94560;">Телефон</h3>
+                <p style="font-size: 18px; cursor: pointer; color: #ccc;" onclick="copyPhone()" title="Нажми чтобы скопировать">8 905 379-18-17</p>
+                <p style="color: #aaa; margin-top: 10px;">Нажми на номер чтобы скопировать</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Подвал -->
+    <div style="padding: 30px; color: #666; font-size: 14px;">
+        <p>Сделано Кириллом | Игры на заказ | 2026</p>
+    </div>
+
+    <script>
+        function showSection(id) {
+            document.getElementById('about').style.display = 'none';
+            document.getElementById('prices').style.display = 'none';
+            document.getElementById('contact').style.display = 'none';
+            document.getElementById(id).style.display = 'block';
+
+            document.getElementById('btn-about').style.background = 'transparent';
+            document.getElementById('btn-prices').style.background = 'transparent';
+            document.getElementById('btn-contact').style.background = 'transparent';
+            document.getElementById('btn-' + id).style.background = '#e94560';
+        }
+
+        function copyPhone() {
+            navigator.clipboard.writeText("89053791817");
+            alert("Номер скопирован: 8 905 379 18 17");
+        }
+    </script>
+</body>
+</html>
